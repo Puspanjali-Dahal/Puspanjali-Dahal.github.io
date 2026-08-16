@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Puspanjali Dahal — Business Analytics</title>
+<meta name="description" content="Business Analytics MSc, Warwick Business School. Projects in retrieval-augmented generation, SQL analytics, and product research.">
+<style>
+  :root{
+    color-scheme:light;
+    --bg:#fbfbfa; --card:#fff; --ink:#0b0b0b; --ink2:#52514e; --muted:#8a8880;
+    --line:rgba(11,11,11,.09);
+    --accent:#2a78d6; --accent2:#eb6834; --good:#006300;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#0d0d0d; --card:#1a1a19; --ink:#fff; --ink2:#c3c2b7; --muted:#8a8880;
+      --line:rgba(255,255,255,.10); --accent:#3987e5; --accent2:#d95926; --good:#0ca30c;
+    }
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);
+       font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+       -webkit-font-smoothing:antialiased}
+  .wrap{max-width:780px;margin:0 auto;padding:0 24px}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  header{padding:80px 0 44px}
+  h1{font-size:38px;letter-spacing:-.025em;line-height:1.1;margin-bottom:10px}
+  .tag{font-size:19px;color:var(--ink2);margin-bottom:22px}
+  .links{display:flex;gap:20px;flex-wrap:wrap;font-size:15px}
+  .intro{margin-top:30px;font-size:17.5px;color:var(--ink2);max-width:58ch}
+  .intro strong{color:var(--ink);font-weight:600}
+
+  section{padding:44px 0;border-top:1px solid var(--line)}
+  h2{font-size:12px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);
+     font-weight:600;margin-bottom:26px}
+  h3{font-size:23px;letter-spacing:-.015em;margin-bottom:8px}
+  .chips{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0 18px}
+  .chip{font-size:12px;padding:3px 10px;border-radius:100px;border:1px solid var(--line);
+        color:var(--ink2)}
+  p{margin-bottom:16px;color:var(--ink2)}
+  p.lead{color:var(--ink2);max-width:62ch}
+  strong{color:var(--ink);font-weight:600}
+
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
+         gap:1px;background:var(--line);border:1px solid var(--line);
+         border-radius:11px;overflow:hidden;margin:26px 0}
+  .stat{background:var(--card);padding:17px 19px}
+  .sv{font-size:26px;font-weight:650;letter-spacing:-.02em;line-height:1.15}
+  .sl{font-size:12.5px;color:var(--ink2);margin-top:4px}
+  .sd{font-size:12.5px;color:var(--good);font-weight:600;margin-top:2px}
+
+  figure{background:var(--card);border:1px solid var(--line);border-radius:11px;
+         padding:22px 24px 16px;margin:26px 0}
+  figcaption{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:2px}
+  .sub{font-size:13px;color:var(--ink2);margin-bottom:16px}
+  .legend{display:flex;gap:18px;font-size:13px;color:var(--ink2);margin-bottom:12px}
+  .key{display:inline-flex;align-items:center;gap:7px}
+  .sw{width:11px;height:11px;border-radius:3px}
+  svg{display:block;width:100%;height:auto;overflow:visible}
+  .tick{font-size:11.5px;fill:var(--muted)}
+  .vlab{font-size:11px;fill:var(--ink2);font-variant-numeric:tabular-nums}
+  .gl{stroke:var(--line);stroke-width:1}
+  .ax{stroke:var(--muted);stroke-width:1;opacity:.5}
+  rect.bar{transition:opacity .12s}
+  rect.bar:hover{opacity:.78}
+
+  .note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent2);
+        border-radius:11px;padding:20px 24px;margin-top:24px}
+  .note ul{margin:10px 0 0 20px}
+  .note li{margin-bottom:9px;font-size:15px;color:var(--ink2)}
+  .note li strong{color:var(--ink)}
+
+  .proj{padding:24px 0;border-top:1px solid var(--line)}
+  .proj:first-of-type{border-top:none;padding-top:0}
+  .proj h3{font-size:18.5px;margin-bottom:2px}
+  .proj p{font-size:15px;margin:8px 0 0;max-width:64ch}
+
+  .tools{display:flex;gap:8px;flex-wrap:wrap}
+  .tool{font-size:13.5px;padding:5px 12px;border-radius:7px;background:var(--card);
+        border:1px solid var(--line);color:var(--ink2)}
+
+  footer{padding:40px 0 72px;border-top:1px solid var(--line);
+         color:var(--muted);font-size:14px}
+  @media(max-width:560px){h1{font-size:29px}header{padding:52px 0 34px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Puspanjali Dahal</h1>
+  <p class="tag">Business Analytics MSc, Warwick Business School &middot; London</p>
+  <div class="links">
+    <a href="https://github.com/puspanjali-dahal">GitHub</a>
+    <a href="https://linkedin.com/in/YOUR-LINKEDIN-HANDLE">LinkedIn</a>
+    <a href="mailto:puspanjalidahal@gmail.com">Email</a>
+  </div>
+  <p class="intro">
+    I turn messy data into decisions people can act on. Before the MSc I ran finance operations
+    at a data infrastructure company, which taught me that the hard part is rarely the model —
+    it's the mess before it and the people who have to act on it after.
+    Currently looking for <strong>Business Analyst, Product Analyst, FinTech and technology
+    consulting</strong> roles in London.
+  </p>
+</header>
+
+<section>
+  <h2>Featured</h2>
+  <h3>RegBot — retrieval over UK financial services regulation</h3>
+  <div class="chips">
+    <span class="chip">Individual project</span><span class="chip">Python</span>
+    <span class="chip">RAG</span><span class="chip">FinTech / RegTech</span>
+  </div>
+  <p class="lead">
+    Compliance questions have a specific problem: the answer has to be traceable to an actual
+    provision, not paraphrased from a model's memory. I built a retrieval system over three
+    pieces of UK legislation — the Payment Services Regulations 2017, the Electronic Money
+    Regulations 2011, and the Financial Services and Markets Act 2000 — so a product owner can
+    ask a plain question and get an answer with the regulation number attached.
+  </p>
+
+  <div class="stats">
+    <div class="stat"><div class="sv">1.3M</div><div class="sl">characters of regulation</div></div>
+    <div class="stat"><div class="sv">527</div><div class="sl">chunks indexed</div></div>
+    <div class="stat"><div class="sv">0.71</div><div class="sl">answer correctness</div><div class="sd">&uarr; 22% vs baseline</div></div>
+    <div class="stat"><div class="sv">0.97</div><div class="sl">retrieval precision</div><div class="sd">&uarr; 7.4% vs baseline</div></div>
+  </div>
+
+  <p class="lead">
+    <strong>How it works.</strong> A baseline pipeline embeds the question and pulls the three
+    nearest chunks. The enhanced pipeline changes three things: <strong>HyDE</strong> drafts a
+    hypothetical regulatory passage and searches with that instead of the raw question,
+    <strong>hybrid retrieval</strong> blends vector similarity with BM25 keyword search at 60/40,
+    and a <strong>cross-encoder reranker</strong> picks the final three from ten candidates. Both
+    pipelines share the same model and prompt, so every difference comes from retrieval alone.
+  </p>
+
+  <figure>
+    <figcaption>Where the enhancements actually helped</figcaption>
+    <div class="sub">Answer correctness by question type. The gain concentrates on hard questions.</div>
+    <div class="legend">
+      <span class="key"><span class="sw" style="background:var(--accent)"></span>Baseline</span>
+      <span class="key"><span class="sw" style="background:var(--accent2)"></span>Enhanced</span>
+    </div>
+    <svg viewBox="0 0 640 240" role="img" aria-label="Correctness by query category, baseline versus enhanced">
+      <line class="gl" x1="52" y1="190" x2="620" y2="190"/>
+      <line class="gl" x1="52" y1="145" x2="620" y2="145"/>
+      <line class="gl" x1="52" y1="100" x2="620" y2="100"/>
+      <line class="gl" x1="52" y1="55"  x2="620" y2="55"/>
+      <line class="gl" x1="52" y1="10"  x2="620" y2="10"/>
+      <text class="tick" x="44" y="194" text-anchor="end">0</text>
+      <text class="tick" x="44" y="149" text-anchor="end">0.25</text>
+      <text class="tick" x="44" y="104" text-anchor="end">0.50</text>
+      <text class="tick" x="44" y="59"  text-anchor="end">0.75</text>
+      <text class="tick" x="44" y="14"  text-anchor="end">1.00</text>
+
+      <rect class="bar" x="72"  y="100" width="42" height="90"  rx="4" fill="var(--accent)"><title>Ambiguous, baseline 0.498</title></rect>
+      <rect class="bar" x="116" y="54"  width="42" height="136" rx="4" fill="var(--accent2)"><title>Ambiguous, enhanced 0.758</title></rect>
+      <text class="vlab" x="93"  y="94" text-anchor="middle">0.50</text>
+      <text class="vlab" x="137" y="48" text-anchor="middle">0.76</text>
+      <text class="tick" x="115" y="210" text-anchor="middle">Ambiguous</text>
+
+      <rect class="bar" x="188" y="83"  width="42" height="107" rx="4" fill="var(--accent)"><title>Deep context, baseline 0.596</title></rect>
+      <rect class="bar" x="232" y="57"  width="42" height="133" rx="4" fill="var(--accent2)"><title>Deep context, enhanced 0.741</title></rect>
+      <text class="vlab" x="209" y="77" text-anchor="middle">0.60</text>
+      <text class="vlab" x="253" y="51" text-anchor="middle">0.74</text>
+      <text class="tick" x="231" y="210" text-anchor="middle">Deep context</text>
+
+      <rect class="bar" x="304" y="80"  width="42" height="110" rx="4" fill="var(--accent)"><title>Edge case, baseline 0.610</title></rect>
+      <rect class="bar" x="348" y="60"  width="42" height="130" rx="4" fill="var(--accent2)"><title>Edge case, enhanced 0.720</title></rect>
+      <text class="vlab" x="325" y="74" text-anchor="middle">0.61</text>
+      <text class="vlab" x="369" y="54" text-anchor="middle">0.72</text>
+      <text class="tick" x="347" y="210" text-anchor="middle">Edge case</text>
+
+      <rect class="bar" x="420" y="74"  width="42" height="116" rx="4" fill="var(--accent)"><title>Simple factual, baseline 0.643</title></rect>
+      <rect class="bar" x="464" y="64"  width="42" height="126" rx="4" fill="var(--accent2)"><title>Simple factual, enhanced 0.699</title></rect>
+      <text class="vlab" x="441" y="68" text-anchor="middle">0.64</text>
+      <text class="vlab" x="485" y="58" text-anchor="middle">0.70</text>
+      <text class="tick" x="463" y="210" text-anchor="middle">Simple factual</text>
+
+      <rect class="bar" x="536" y="88"  width="42" height="102" rx="4" fill="var(--accent)"><title>Product owner, baseline 0.565</title></rect>
+      <rect class="bar" x="580" y="78"  width="42" height="112" rx="4" fill="var(--accent2)"><title>Product owner, enhanced 0.620</title></rect>
+      <text class="vlab" x="557" y="82" text-anchor="middle">0.57</text>
+      <text class="vlab" x="601" y="72" text-anchor="middle">0.62</text>
+      <text class="tick" x="579" y="210" text-anchor="middle">Product owner</text>
+
+      <line class="ax" x1="52" y1="190" x2="620" y2="190"/>
+    </svg>
+  </figure>
+
+  <p class="lead">
+    <strong>The result that matters.</strong> On one ambiguous question about consent
+    requirements, the baseline retrieved nothing relevant at all — precision 0.00 — and answered
+    from the wrong statute. The enhanced pipeline hit precision 1.00 and cited the exact
+    provision, section 67(2)(b) on the required form of consent. That is the gap these three
+    techniques were chosen to close, and it closed.
+  </p>
+
+  <div class="note">
+    <strong>What didn't work, and why</strong>
+    <ul>
+      <li><strong>HyDE can steer retrieval the wrong way.</strong> On an insolvency question the
+      hypothetical passage referenced the Insolvency Act 1986, which isn't in the corpus. It
+      pulled search away from the relevant safeguarding provisions and the baseline outperformed.
+      A hypothetical document that's slightly off-target is worse than none.</li>
+      <li><strong>The recall figure of 0.016 is an evaluation artefact, not a finding.</strong>
+      Retrieving 3 chunks from 527 makes corpus-wide recall structurally tiny regardless of
+      quality. A real measure needs a hand-labelled relevance set.</li>
+      <li><strong>Grounding fell slightly, 0.375 to 0.359.</strong> The enhanced pipeline
+      synthesised across chunks instead of quoting one. For a compliance reader that's arguably
+      better, which makes grounding the less useful metric here.</li>
+    </ul>
+  </div>
+
+  <p style="margin-top:22px">
+    <a href="https://github.com/puspanjali-dahal/regbot"><strong>Code, evaluation and demo outputs on GitHub &rarr;</strong></a>
+  </p>
+</section>
+
+<section>
+  <h2>Other work</h2>
+
+  <div class="proj">
+    <h3>Digital service proposal for a UK retailer</h3>
+    <div class="chips"><span class="chip">Individual</span><span class="chip">Service design</span></div>
+    <p>Found a friction point in a live B2C service through primary research — app usability
+    review, customer journey mapping, and analysis of what customers complained about unprompted
+    — then designed a digital service to remove it, with a technology comparison and mitigations
+    for the top two risks. Graded among the highest in the cohort.</p>
+  </div>
+
+  <div class="proj">
+    <h3>Customer database and SQL analytics platform</h3>
+    <div class="chips"><span class="chip">Led the team</span><span class="chip">SQL</span><span class="chip">Python</span></div>
+    <p>Took a business problem through the full data management cycle: relational schema design,
+    synthetic data generation in Python, implementation in SQLite, then exploratory and
+    analytical SQL to produce the insights behind the final recommendations.</p>
+  </div>
+
+  <div class="proj">
+    <h3>Credit application prediction</h3>
+    <div class="chips"><span class="chip">Team project</span><span class="chip">Predictive modelling</span></div>
+    <p>Consultancy simulation for a bank client: a model forecasting which customers would apply
+    for business credit, so the bank could engage them before they looked elsewhere. I delivered
+    the client-facing pitch.</p>
+  </div>
+
+  <div class="proj">
+    <h3>Regression analysis in R</h3>
+    <div class="chips"><span class="chip">Individual</span><span class="chip">R</span></div>
+    <p>Two studies: separating quality from reach in podcast performance data across genres, and
+    modelling UK household weekly expenditure by income band, household size and vehicle
+    ownership.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Tools</h2>
+  <div class="tools">
+    <span class="tool">Python</span><span class="tool">SQL</span><span class="tool">R</span>
+    <span class="tool">Tableau</span><span class="tool">Excel</span>
+    <span class="tool">ChromaDB</span><span class="tool">BM25</span>
+    <span class="tool">sentence-transformers</span><span class="tool">Gradio</span>
+    <span class="tool">SQLite</span>
+  </div>
+</section>
+
+<footer>
+  <a href="https://github.com/puspanjali-dahal">GitHub</a> &nbsp;·&nbsp;
+  <a href="https://linkedin.com/in/YOUR-LINKEDIN-HANDLE">LinkedIn</a> &nbsp;·&nbsp;
+  <a href="mailto:puspanjalidahal@gmail.com">puspanjalidahal@gmail.com</a>
+</footer>
+
+</div>
+</body>
+</html>
